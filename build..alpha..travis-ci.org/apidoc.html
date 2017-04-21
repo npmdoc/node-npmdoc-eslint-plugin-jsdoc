@@ -1,0 +1,827 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >eslint-plugin-jsdoc (v3.0.2)</a>
+</h1>
+<h4>JSDoc linting rules for ESLint.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eslint-plugin-jsdoc">module eslint-plugin-jsdoc</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">eslint-plugin-jsdoc.</span>rules</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">eslint-plugin-jsdoc.</span>rulesConfig</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eslint-plugin-jsdoc.rules">module eslint-plugin-jsdoc.rules</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.check-param-names">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>check-param-names
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.check-tag-names">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>check-tag-names
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.check-types">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>check-types
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.newline-after-description">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>newline-after-description
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-description-complete-sentence">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-description-complete-sentence
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-hyphen-before-param-description">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-hyphen-before-param-description
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-param">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-param
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-param-description">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-param-description
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-param-type">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-param-type
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-returns-description">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-returns-description
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eslint-plugin-jsdoc.rules.require-returns-type">
+            function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-returns-type
+            <span class="apidocSignatureSpan">(context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eslint-plugin-jsdoc" id="apidoc.module.eslint-plugin-jsdoc">module eslint-plugin-jsdoc</a></h1>
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eslint-plugin-jsdoc.rules" id="apidoc.module.eslint-plugin-jsdoc.rules">module eslint-plugin-jsdoc.rules</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.check-param-names" id="apidoc.element.eslint-plugin-jsdoc.rules.check-param-names">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>check-param-names
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check-param-names = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.check-tag-names" id="apidoc.element.eslint-plugin-jsdoc.rules.check-tag-names">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>check-tag-names
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check-tag-names = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.check-types" id="apidoc.element.eslint-plugin-jsdoc.rules.check-types">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>check-types
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check-types = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.newline-after-description" id="apidoc.element.eslint-plugin-jsdoc.rules.newline-after-description">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>newline-after-description
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">newline-after-description = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-description-complete-sentence" id="apidoc.element.eslint-plugin-jsdoc.rules.require-description-complete-sentence">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-description-complete-sentence
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-description-complete-sentence = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-hyphen-before-param-description" id="apidoc.element.eslint-plugin-jsdoc.rules.require-hyphen-before-param-description">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-hyphen-before-param-description
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-hyphen-before-param-description = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-param" id="apidoc.element.eslint-plugin-jsdoc.rules.require-param">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-param
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-param = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-param-description" id="apidoc.element.eslint-plugin-jsdoc.rules.require-param-description">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-param-description
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-param-description = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-param-type" id="apidoc.element.eslint-plugin-jsdoc.rules.require-param-type">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-param-type
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-param-type = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-returns-description" id="apidoc.element.eslint-plugin-jsdoc.rules.require-returns-description">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-returns-description
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-returns-description = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eslint-plugin-jsdoc.rules.require-returns-type" id="apidoc.element.eslint-plugin-jsdoc.rules.require-returns-type">
+        function <span class="apidocSignatureSpan">eslint-plugin-jsdoc.rules.</span>require-returns-type
+        <span class="apidocSignatureSpan">(context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">require-returns-type = function (context) {
+  var sourceCode = context.getSourceCode();
+  var tagNamePreference = _lodash2.default.get(context, &#x27;settings.jsdoc.tagNamePreference&#x27;) || {};
+  var additionalTagNames = _lodash2.default.get(context, &#x27;settings.jsdoc.additionalTagNames&#x27;) || {};
+
+  var checkJsdoc = function checkJsdoc(functionNode) {
+    var jsdocNode = sourceCode.getJSDocComment(functionNode);
+
+    if (!jsdocNode) {
+      return;
+    }
+
+    var jsdoc = (0, _commentParser2.default)(&#x27;/*&#x27; + jsdocNode.value + &#x27;*/&#x27;, {
+      // @see https://github.com/yavorskiy/comment-parser/issues/21
+      parsers: [_commentParser2.default.PARSERS.parse_tag, _commentParser2.default.PARSERS.parse_type, function (str, data) {
+        if (_lodash2.default.includes([&#x27;return&#x27;, &#x27;returns&#x27;], data.tag)) {
+          return null;
+        }
+
+        return _commentParser2.default.PARSERS.parse_name(str, data);
+      }, _commentParser2.default.PARSERS.parse_description]
+    })[0] || {};
+
+    var report = function report(message) {
+      context.report(jsdocNode, message);
+    };
+
+    var utils = curryUtils(functionNode, jsdoc, tagNamePreference, additionalTagNames);
+
+    iterator({
+      context,
+      functionNode,
+      jsdoc,
+      jsdocNode,
+      report,
+      utils
+    });
+  };
+
+  return {
+    ArrowFunctionExpression: checkJsdoc,
+    FunctionDeclaration: checkJsdoc,
+    FunctionExpression: checkJsdoc
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
